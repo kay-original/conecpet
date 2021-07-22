@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_140536) do
+ActiveRecord::Schema.define(version: 2021_07_22_142957) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_07_22_140536) do
     t.string "breed"
     t.string "mother_breed"
     t.string "father_breed"
-    t.string "birthplace"
+    t.integer "birthplace"
     t.date "birthday"
     t.string "breeder_name"
     t.string "mother_name"
