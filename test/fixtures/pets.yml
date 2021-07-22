@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  name: MyString
+  dog_or_cat: MyString
+  breed: MyString
+  mother_breed: MyString
+  father_breed: MyString
+  birthplace: MyString
+  birthday: 2021-07-14
+  breeder_name: MyString
+  mother_name: MyString
+  father_name: MyString
+
+two:
+  user: two
+  name: MyString
+  dog_or_cat: MyString
+  breed: MyString
+  mother_breed: MyString
+  father_breed: MyString
+  birthplace: MyString
+  birthday: 2021-07-14
+  breeder_name: MyString
+  mother_name: MyString
+  father_name: MyString

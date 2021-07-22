@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="form-container">
+    <h2 class="sub-title">プロフィール編集</h2>
+    <%= form_for @user do |f| %>
+      <div class="field">
+        <p><%= f.label :image, "プロフィール画像" %></p>
+        <%= f.file_field :image %>
+      </div>
+      <div class="field">
+        <p><%= f.label :name %></p>
+        <%= f.text_field :name, autofocus: true, class: "form-text" %>
+      </div>
+      <div class="field">
+        <p><%= f.label :introduction, "自己紹介" %></p>
+        <%= f.text_area :introduction, class: "form-introdution" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "更新", class: "form-btn" %>
+      </div>
+    <% end %>
+    <%= link_to "戻る", user_path(current_user) %>
+  </div>
+</div>

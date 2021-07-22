@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="form-container">
+    <h3 class="sub-title">新規登録</h3>
+    <%= render "users/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="field">
+        <p><%= f.label :name %></p>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-text" %>
+      </div>
+      <div class="field">
+        <p><%= f.label :image, "プロフィール画像" %></p>
+        <%= f.file_field :image %><br>
+      </div>
+
+      <div class="field">
+        <p><%= f.label :email %></p>
+        <%= f.email_field :email, autocomplete: "email", class: "form-text" %>
+      </div>
+      <div class="field">
+        <p>
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em>(最低<%= @minimum_password_length %>文字以上)</em>
+          <% end %>
+        </p>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-text" %>
+      </div>
+      <div class="field">
+        <p><%= f.label :password_confirmation %></p>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-text" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "登録する", class: "form-btn" %>
+      </div>
+    <% end %>
+    <%= link_to "アカウントをお持ちの方はこちら", new_session_path(resource_name), class: "form-links" %>
+  </div>
+</div>

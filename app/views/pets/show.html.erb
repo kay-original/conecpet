@@ -1,0 +1,93 @@
+<div class="container">
+  <h2 class="pet_profile_title"><%= @pet.name %>のプロフィール</h2>
+  <div class="pet_detail__imgframe">
+    <% if @pet.pet_image.attached? %>
+      <%= image_tag @pet.pet_image %>
+    <% else %>
+      <%= image_tag "20200501_noimage.jpg" %>
+    <% end %>
+  </div>
+  <div class="card__textbox">
+    <div class="card__titletext">
+      <p><%= @pet.name %></p>
+    </div>
+    <div class="card__overviewtext">
+      <%= link_to user_path(@pet.user.id) do %>
+        <li class="pet_text">
+          飼い主：<%= @pet.user.name %>
+        </li>
+      <% end %>
+      <li class="pet_text">
+        種類：<%= @pet.breed %>
+      </li>
+      <% if @pet.mother_breed? || @pet.father_breed? %>
+        <li class="pet_text">
+          母の種類：<%= @pet.mother_breed %>
+        </li>
+        <li class="pet_text">
+          父の種類：<%= @pet.father_breed %>
+        </li>
+      <% end %>
+      <% if @pet.birthplace? %>
+        <li class="pet_text">
+          出身地：<%= @pet.birthplace %>
+        </li>
+      <% else %>
+        <li class="pet_text">
+          出身地：<span>設定されてません</span>
+        </li>
+      <% end %>
+      <% if @pet.birthday? %>
+        <li class="pet_text">
+          誕生日：<%= @pet.birthday %>
+        </li>
+      <% else %>
+        <li class="pet_text">
+          誕生日：<span>設定されてません</span>
+        </li>
+      <% end %>
+      <% if @pet.breeder_name? %>
+        <li class="pet_text">
+          ブリーダーの名前：<%= @pet.breeder_name %>
+        </li>
+      <% else %>
+        <li class="pet_text">
+          ブリーダーの名前：<span>設定されてません</span>
+        </li>
+      <% end %>
+      <% if @pet.mother_name? %>
+        <li class="pet_text">
+          母の名前：<%= @pet.mother_name %>
+        </li>
+      <% else %>
+        <li class="pet_text">
+          母の名前：<span>設定されてません</span>
+        </li>
+      <% end %>
+      <% if @pet.father_name? %>
+        <li class="pet_text">
+          父の名前：<%= @pet.father_name %>
+        </li>
+      <% else %>
+        <li class="pet_text">
+          父の名前：<span>設定されてません</span>
+        </li>
+      <% end %>
+      <% if @pet.other_info? %>
+        <li class="pet_text">
+          追加情報：<%= @pet.other_info %>
+        </li>
+      <% else %>
+        <li class="pet_text">
+          追加情報：<span>設定されてません</span>
+        </li>
+      <% end %>
+    </div>
+  </div>
+  <% if current_user.id == @pet.user.id %>
+    <div class="link-column">
+      <%= link_to "プロフィール編集", edit_pet_path, class: "profile-edit" %>
+      <%= link_to "マイペットを削除", pet_path(@pet.id), method: :delete, data: { confirm: '本当に良いですか？' }, class: "delete-btn" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,60 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.page-wrap{
+  background-image: image-url("dog-1407468_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+}
+.catch-phrase{
+  padding: 280px 0;
+  color: rgb(253, 253, 253);
+  text-align: center;
+  h1{
+    font-size: 46px;
+  }
+  h2{
+    font-size: 30px;
+    margin-top: 10px;
+  }
+}
+
+.web_intro{
+  padding: 20px 80px;
+}
+
+.intro_back{
+  background-color: rgb(222, 184, 135);
+  padding: 30px;
+  border-radius: 10px;
+  line-height: 250%;
+  h1{
+    padding: 10px 0;
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 599px) {
+  .catch-container{
+    height: 300px;
+    h1{
+      font-size: 36px;
+    }
+    h2{
+      font-size: 20px;
+    }
+  }
+  .catch-phrase{
+    padding: 100px 0;
+  }
+}
+@media (min-width: 1200px) {
+  .catch-phrase{
+    padding: 320px 0;
+  }
+}

@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="form-container">
+    <h2 class="sub-title"><%= @page_title %></h2>
+    <%= form_with(model: pet) do |form| %>
+      <div class="field">
+        <p>プロフィール画像</p>
+        ＊ペットが中央に写っている画像をお選びください＊<br>
+        <%= form.file_field :pet_image %>
+      </div>
+
+      <div class="field">
+        <p><%= form.label :name, "ペットのお名前" %></p>
+        <%= form.text_field :name, autofocus: true, class: "form-text" %>
+      </div>
+
+      <div class="field">
+        <p>
+          <span class="radio">
+            <%= form.radio_button :dog_or_cat, "犬", id: "dog", checked: true %>
+            <%= form.label :dog_or_cat, "犬", for: "dog" %>
+          </span>
+          <span class="radio">
+            <%= form.radio_button :dog_or_cat, "猫", id: "cat" %>
+            <%= form.label :dog_or_cat, "猫", for: "cat" %>
+          </span>
+        </p>
+      </div>
+
+      <div class="field" id="dog_breed_form">
+        <p><%= form.label :breed, "犬種" %></p>
+        <%= form.select :breed, Pet.dog_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "dog_breed" %><br>
+      </div>
+
+      <div class="field switch_display" id="cat_breed_form">
+        <p><%= form.label :breed, "猫種" %></p>
+        <%= form.select :breed, Pet.cat_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "cat_breed", disabled: true %><br>
+      </div>
+      <div id="parents_dog_breed">
+        <div class="field">
+          <p><%= form.label :mother_breed, "母犬の犬種" %></p>
+          <%= form.select :mother_breed, Pet.dog_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "mother_dog_breed" %>
+        </div>
+
+        <div class="field">
+          <p><%= form.label :father_breed, "父犬の犬種" %></p>
+          <%= form.select :father_breed, Pet.dog_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "father_dog_breed" %>
+        </div>
+      </div>
+
+      <div id="parents_cat_breed" class="switch_display">
+        <div class="field">
+          <p><%= form.label :mother_breed, "母猫の猫種" %></p>
+          <%= form.select :mother_breed, Pet.cat_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "mother_cat_breed" %>
+        </div>
+        <div class="field">
+          <p><%= form.label :father_breed, "父猫の猫種" %></p>
+          <%= form.select :father_breed, Pet.cat_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "father_cat_breed" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <p><%= form.label :birthplace, "出身地" %></p>
+        <%= form.select :birthplace, Pet.birthplaces.keys, {include_blank: '選択してください'}, class: "form-text" %>
+      </div>
+
+      <div class="field">
+        <p><%= form.label :birthday, "誕生日" %></p>
+        <%= form.date_field :birthday, class: "form-text" %>
+      </div>
+
+      <div class="field">
+        <p><%= form.label :breeder_name, "ブリーダー名" %></p>
+        <%= form.text_field :breeder_name, class: "form-text"%>
+      </div>
+
+      <div id="dog_parents_name">
+        <div class="field">
+          <p><%= form.label :mother_name, "母犬の名前" %></p>
+          <%= form.text_field :mother_name, class: "form-text", id: "mother_dog_name" %>
+        </div>
+
+        <div class="field">
+          <p><%= form.label :father_name, "父犬の名前" %></p>
+          <%= form.text_field :father_name, class: "form-text", id: "father_dog_name" %>
+        </div>
+      </div>
+
+      <div id="cat_parents_name" class="switch_display">
+        <div class="field">
+          <p><%= form.label :mother_name, "母猫の名前" %></p>
+          <%= form.text_field :mother_name, class: "form-text", id: "mother_cat_name", disabled: true %>
+        </div>
+
+        <div class="field">
+          <p><%= form.label :father_name, "父猫の名前" %></p>
+          <%= form.text_field :father_name, class: "form-text", id: "father_cat_name", disabled: true %>
+        </div>
+
+      </div>
+      <div class="field">
+        <p><%= form.label :other_info, "追加情報" %></p>
+        <%= form.text_area :other_info, class: "add_info" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "マイペット登録", class: "form-btn" %>
+      </div>
+    <% end %>
+    <%= link_to "戻る", pets_path %>
+  </div>
+</div>

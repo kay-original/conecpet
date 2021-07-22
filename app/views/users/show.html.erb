@@ -1,0 +1,92 @@
+<header class="sub-header">
+  <div class="wrapper site-header__wrapper wrapper_sub">
+    <% if @user.id == current_user.id %>
+      <h2>マイページ</h2>
+      <nav class="nav">
+        <ul class="sub_wrapper">
+          <li class="sub__item"><%= link_to "プロフィール編集", edit_user_path %></li>
+          <li class="sub__item"><%= link_to "基本情報変更", edit_user_registration_path %></li>
+        </ul>
+      </nav>
+    <% else %>
+      <h2><%= @user.name %>さんのページ</h2>
+    <% end %>
+  </div>
+</header>
+<div class="container profile-outer">
+  <div class="profile-image">
+    <% if @user.image.attached? %>
+      <%= image_tag @user.image %>
+    <% else %>
+      <%= image_tag "20200501_noimage.jpg" %>
+    <% end %>
+  </div>
+  <div class="profile-content">
+    <div class="profile-column">
+      <h3>ニックネーム</h3>
+      <p><%= @user.name %></p>
+    </div>
+    <% if current_user.id == @user.id %>
+      <div class="profile-column">
+        <h3>メールアドレス</h3>
+        <p><%= @user.email %></p>
+      </div>
+    <% end %>
+    <div class="profile-column intro-column">
+      <h3>自己紹介</h3>
+      <% if @user.introduction? %>
+        <p><%= @user.introduction %></p>
+      <% else %>
+        <p class="non-set">自己紹介文の設定がありません</p>
+      <% end %>
+    </div>
+    <% if current_user.id == @user.id %>
+      <div class="link-column">
+        <%= link_to "プロフィール編集", edit_user_path, class: "profile-edit" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="mypet-head">
+  <% if current_user.id == @user.id %>
+    <h1>マイペット一覧</h1>
+  <% else %>
+    <h1><%= @user.name %>さんのペット</h1>
+  <% end %>
+</div>
+<div class="mypet-container">
+  <% @pets.each do |pet| %>
+    <div class="card card-skin">
+      <%= link_to pet_path(pet.id) do %>
+        <div class="card__imgframe">
+          <% if pet.pet_image.attached? %>
+            <%= image_tag pet.pet_image %>
+          <% else %>
+            <%= image_tag "20200501_noimage.jpg" %>
+          <% end %>
+        </div>
+        <div class="card__textbox">
+          <div class="card__titletext">
+            <p><%= pet.name %></p>
+          </div>
+          <div class="card__overviewtext">
+            <li class="pet_text">
+              種類：<%= pet.breed %>
+            </li>
+            <li class="pet_text">
+              出身地：<%= pet.birthplace %>
+            </li>
+            <li class="pet_text">
+              誕生日：<%= pet.birthday %>
+            </li>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<% if current_user.id == @user.id %>
+  <div class="pet_link_column">
+    <%= link_to "マイペット登録", new_pet_path, class: "profile-edit" %>
+  </div>
+<% end %>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CONECPETS</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <%= link_to "CONECPETS", root_path, class:"brand" %>
+        <nav class="nav">
+          <div class="nav__toggle icon">
+            <% if user_signed_in? %>
+              <% if current_user.image.attached? %>
+                <%= image_tag current_user.image, class: "icon-img" %>
+              <% else %>
+                <%= image_tag "20200501_noimage.jpg", class: "icon-img" %>
+              <% end %>
+            <% else %>
+              <%= image_tag "sozai_cman_jp_20210712042009.png", class: "not-login-img" %>
+            <% end %>
+          </div>
+          <ul class="nav__wrapper">
+            <% if user_signed_in? %>
+              <li class="nav__item"><%= link_to "兄弟を探す", pets_path %></li>
+              <li class="nav__item"><%= link_to "マイページ", user_path(current_user.id) %></li>
+              <li class="nav__item"><%= link_to "マイペット登録", new_pet_path %></li>
+              <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li class="nav__item"><%= link_to "新規登録", new_user_registration_path %></li>
+              <li class="nav__item"><%= link_to "ログイン", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <footer>
+      CONECPETS
+    </footer>
+    <%= javascript_pack_tag 'header.js'%>
+    <%= javascript_pack_tag 'pet_form.js'%>
+  </body>
+</html>
