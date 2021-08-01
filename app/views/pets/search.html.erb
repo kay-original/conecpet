@@ -6,8 +6,8 @@
 <div class="search-form">
   <%= search_form_for @q, url: search_pets_path do |f| %>
     <div class="search-field">
-      <%= f.label :name_or_breed_or_mother_breed_or_father_breed_or_birthplace_or_breeder_name_cont, "フリーワード" %><br>
-      <%= f.search_field :name_or_breed_or_mother_breed_or_father_breed_or_birthplace_or_breeder_name_cont, class: "search-text" %>
+      <%= f.label :name_or_breed_or_mother_breed_or_father_breed_or_breeder_name_cont, "フリーワード" %><br>
+      <%= f.search_field :name_or_breed_or_mother_breed_or_father_breed_or_breeder_name_cont, class: "search-text" %>
     </div>
     <div class="search-field">
       <%= f.label :dog_or_cat_eq, "絞り込み" %><br>
