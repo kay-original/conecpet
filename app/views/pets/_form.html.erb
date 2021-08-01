@@ -60,7 +60,7 @@
 
       <div class="field">
         <p><%= form.label :birthplace, "出身地" %></p>
-        <%= form.select :birthplace, Pet.prefectures.keys, {include_blank: '選択してください'}, class: "form-text" %>
+        <%= form.select :birthplace, Pet.birthplace_pres.keys, {include_blank: '選択してください'}, class: "form-text" %>
       </div>
 
       <div class="field">
