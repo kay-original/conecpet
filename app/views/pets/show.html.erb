@@ -84,10 +84,8 @@
       <% end %>
     </div>
   </div>
-  <% if current_user.id == @pet.user.id %>
-    <div class="link-column">
-      <%= link_to "プロフィール編集", edit_pet_path, class: "profile-edit" %>
-      <%= link_to "マイペットを削除", pet_path(@pet.id), method: :delete, data: { confirm: '本当に良いですか？' }, class: "delete-btn" %>
-    </div>
-  <% end %>
+  <div class="link-column">
+    <%= link_to "プロフィール編集", edit_pet_path, class: "profile-edit" %>
+    <%= link_to "マイペットを削除", pet_path(@pet.id), method: :delete, data: { confirm: '本当に良いですか？' }, class: "delete-btn" %>
+  </div>
 </div>
