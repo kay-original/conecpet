@@ -64,37 +64,3 @@ function dispCatBreed() {
     catBreedSelect.disabled = false;
   }
 };
-
-dogBreed.addEventListener("change", dispDogParents);
-function dispDogParents(){
-  if (document.getElementById("dog_breed")){
-    dogBreedValue = document.getElementById("dog_breed").value;
-    if (dogBreedValue == "ミックス犬"){
-      parentDog.style.display = "block";
-      motherCatBreed.disabled = true
-      fatherCatBreed.disabled = true
-      motherDogBreed.disabled = false
-      fatherDogBreed.disabled = false
-    }
-    else{
-      parentDog.style.display = "none";
-    }
-  }
-}
-
-catBreed.addEventListener("change", dispCatParents);
-function dispCatParents(){
-  if (document.getElementById("cat_breed")){
-    catBreedValue = document.getElementById("cat_breed").value;
-    if (catBreedValue == "ミックス猫"){
-      parentCat.style.display = "block";
-      motherDogBreed.disabled = true
-      fatherDogBreed.disabled = true
-      motherCatBreed.disabled = false
-      fatherCatBreed.disabled = false
-    }
-    else{
-      parentCat.style.display = "none";
-    }
-  }
-}
