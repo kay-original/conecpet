@@ -28,39 +28,39 @@
 
       <div class="field" id="dog_breed_form">
         <p><%= form.label :breed, "犬種" %></p>
-        <%= form.select :breed, Pet.dog_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "dog_breed" %><br>
+        <%= form.text_field :breed, class: "form-text", id: "dog_breed" %><br>
       </div>
 
       <div class="field switch_display" id="cat_breed_form">
         <p><%= form.label :breed, "猫種" %></p>
-        <%= form.select :breed, Pet.cat_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "cat_breed", disabled: true %><br>
+        <%= form.text_field :breed, class: "form-text", id: "cat_breed", disabled: true %><br>
       </div>
       <div id="parents_dog_breed">
         <div class="field">
           <p><%= form.label :mother_breed, "母犬の犬種" %></p>
-          <%= form.select :mother_breed, Pet.dog_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "mother_dog_breed" %>
+          <%= form.text_field :mother_breed, class: "form-text", id: "mother_dog_breed" %>
         </div>
 
         <div class="field">
           <p><%= form.label :father_breed, "父犬の犬種" %></p>
-          <%= form.select :father_breed, Pet.dog_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "father_dog_breed" %>
+          <%= form.text_field :father_breed, class: "form-text", id: "father_dog_breed" %>
         </div>
       </div>
 
       <div id="parents_cat_breed" class="switch_display">
         <div class="field">
           <p><%= form.label :mother_breed, "母猫の猫種" %></p>
-          <%= form.select :mother_breed, Pet.cat_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "mother_cat_breed" %>
+          <%= form.text_field :mother_breed, class: "form-text", id: "mother_cat_breed", disabled: true %>
         </div>
         <div class="field">
           <p><%= form.label :father_breed, "父猫の猫種" %></p>
-          <%= form.select :father_breed, Pet.cat_breeds.keys, {include_blank: '選択してください'}, class: "form-text", id: "father_cat_breed" %>
+          <%= form.text_field :father_breed, class: "form-text", id: "father_cat_breed", disabled: true %>
         </div>
       </div>
 
       <div class="field">
         <p><%= form.label :birthplace, "出身地" %></p>
-        <%= form.select :birthplace, Pet.birthplaces, {include_blank: '選択してください'}, class: "form-text" %>
+        <%= form.text_field :birthplace, class: "form-text" %>
       </div>
 
       <div class="field">

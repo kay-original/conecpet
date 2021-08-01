@@ -28,6 +28,7 @@ var fatherCatName = document.getElementById("father_cat_name")
 dogRadio.addEventListener("click", dispDogBreed);
 function dispDogBreed() {
   dogBreed.style.display = "block";
+  parentCat.style.display = "none"
   motherCatName.disabled = true;
   fatherCatName.disabled = true;
   motherDogName.disabled = false;
@@ -72,6 +73,8 @@ function dispDogParents(){
       parentDog.style.display = "block";
       motherCatBreed.disabled = true
       fatherCatBreed.disabled = true
+      motherDogBreed.disabled = false
+      fatherDogBreed.disabled = false
     }
     else{
       parentDog.style.display = "none";
@@ -87,6 +90,8 @@ function dispCatParents(){
       parentCat.style.display = "block";
       motherDogBreed.disabled = true
       fatherDogBreed.disabled = true
+      motherCatBreed.disabled = false
+      fatherCatBreed.disabled = false
     }
     else{
       parentCat.style.display = "none";
