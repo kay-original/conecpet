@@ -38,23 +38,23 @@
       <div id="parents_dog_breed">
         <div class="field">
           <p><%= form.label :mother_breed, "母犬の犬種" %></p>
-          <%= form.text_field :mother_breed, class: "form-text", id: "mother_dog_breed" %>
+          <%= form.text_field :mother_breed, class: "form-text", id: "mother_dog_breed", placeholder: "ミックスのみ入力" %>
         </div>
 
         <div class="field">
           <p><%= form.label :father_breed, "父犬の犬種" %></p>
-          <%= form.text_field :father_breed, class: "form-text", id: "father_dog_breed" %>
+          <%= form.text_field :father_breed, class: "form-text", id: "father_dog_breed", placeholder: "ミックスのみ入力" %>
         </div>
       </div>
 
       <div id="parents_cat_breed" class="switch_display">
         <div class="field">
           <p><%= form.label :mother_breed, "母猫の猫種" %></p>
-          <%= form.text_field :mother_breed, class: "form-text", id: "mother_cat_breed", disabled: true %>
+          <%= form.text_field :mother_breed, class: "form-text", id: "mother_cat_breed", placeholder: "ミックスのみ入力", disabled: true %>
         </div>
         <div class="field">
           <p><%= form.label :father_breed, "父猫の猫種" %></p>
-          <%= form.text_field :father_breed, class: "form-text", id: "father_cat_breed", disabled: true %>
+          <%= form.text_field :father_breed, class: "form-text", id: "father_cat_breed", placeholder: "ミックスのみ入力", disabled: true %>
         </div>
       </div>
 
