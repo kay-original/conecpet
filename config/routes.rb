@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  post '/home/guest_sign_in', to: 'home#guest_sign_in'
   devise_for :users, controllers: {
     confirmations: 'users/confirmations',
     passwords:     'users/passwords',
