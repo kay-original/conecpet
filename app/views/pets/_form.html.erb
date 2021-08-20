@@ -10,11 +10,12 @@
 
       <div class="field">
         <p><%= form.label :name, "ペットのお名前" %></p>
-        <%= form.text_field :name, autofocus: true, class: "form-text" %>
+        <%= form.text_field :name, autofocus: true, class: "form-text", placeholder: "入力必須" %>
       </div>
 
       <div class="field">
         <p>
+          <%= form.label :dog_or_cat, "種類" %><br>
           <span class="radio">
             <%= form.radio_button :dog_or_cat, "犬", id: "dog", checked: true %>
             <%= form.label :dog_or_cat, "犬", for: "dog" %>
@@ -60,7 +61,7 @@
 
       <div class="field">
         <p><%= form.label :birthplace, "出身地" %></p>
-        <%= form.text_field :birthplace, class: "form-text" %>
+        <%= form.text_field :birthplace, class: "form-text", placeholder: "都道府県" %>
       </div>
 
       <div class="field">
