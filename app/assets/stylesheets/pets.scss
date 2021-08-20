@@ -86,9 +86,9 @@
   font-size: 14px;
 }
 .search-btn {
-  margin-left: 100px;
+  margin-top: 24px;
   position: relative;
-  display: inline-block;
+  display: block;
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: #FFF;
@@ -112,8 +112,7 @@
 .search-field{
   padding: 10px 0;
   span{
-    box-sizing: border-box;
-    padding-left: 10px;
+    padding-left: 20px;
   }
 }
 .search-text{
@@ -122,6 +121,7 @@
   padding: 0 16px;
   border-radius: 4px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 .search-text:focus {
   border: none;
@@ -182,4 +182,68 @@
     -moz-appearance: none;
     font-size: 16px;
   }
+}
+
+/*comment*/
+.comments{
+  h1{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    border-top: groove 5px #a6ff00;
+    border-bottom: groove 5px #a6ff00;
+    font-size: 28px;
+  }
+}
+.comments_index{
+  border: rgb(216, 216, 216) solid 1px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.comment_user{
+  line-height: 200%;
+  span{
+    font-weight: bold;
+  }
+}
+.comment_form{
+  display: block;
+  height: 100px;
+  width: 100%;
+  border: rgb(216, 216, 216) solid 1px;
+  border-radius: 5px;
+  margin-top: 36px;
+  margin-bottom: 16px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+.comment_btn{
+  color: white;
+  background: #34971b;
+  border: solid 1px #148d09;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  padding: 0.25em 0.5em;
+}
+.comment_btn:active{
+  border: solid 1px #44a01a;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+/*fav*/
+.fav{
+  text-align: right;
+  .fav-regi{
+    display: inline-block;
+    text-align: center;
+  }
+}
+.star{
+  color: rgb(255, 196, 0);
+}
+.fav_count{
+  margin-top: 12px;
 }

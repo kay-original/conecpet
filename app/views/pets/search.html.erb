@@ -10,6 +10,10 @@
       <%= f.search_field :name_or_breed_or_mother_breed_or_father_breed_or_breeder_name_or_birthplace_cont, class: "search-text" %>
     </div>
     <div class="search-field">
+      <%= f.label :birthday_eq, "誕生日検索" %><br>
+      <%= f.date_field :birthday_eq, class: "search-text" %>
+    </div>
+    <div class="search-field">
       <%= f.label :dog_or_cat_eq, "絞り込み" %><br>
       <span><%= f.radio_button :dog_or_cat_eq, " ", checked: true, id: "none" %><label for="none">指定なし</label></span>
       <span><%= f.radio_button :dog_or_cat_eq, "犬", id: "search-dog" %><label for="search-dog">犬</label></span>

@@ -14,12 +14,22 @@
   </div>
 </header>
 <div class="container profile-outer">
-  <div class="profile-image">
-    <% if @user.image.attached? %>
-      <%= image_tag @user.image %>
-    <% else %>
-      <%= image_tag "20200501_noimage.jpg" %>
-    <% end %>
+  <div class="profile-right">
+    <div class="profile-image">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image %>
+      <% else %>
+        <%= image_tag "20200501_noimage.jpg" %>
+      <% end %>
+    </div>
+    <div class="count">
+      <ul>
+        <%= link_to user_favorites_path(@user.id) do %>
+          <li>お気に入り<br><%= @favorites.count %></li>
+        <% end %>
+        <li>マイペット<br><%= @pets.count %></li>
+      </ul>
+    </div>
   </div>
   <div class="profile-content">
     <div class="profile-column">

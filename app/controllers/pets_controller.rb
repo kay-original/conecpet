@@ -9,6 +9,8 @@ class PetsController < ApplicationController
   # GET /pets/1 or /pets/1.json
   def show
     @pet = Pet.find(params[:id])
+    @comments = @pet.comments
+    @comment = current_user.comments.new
   end
 
   # GET /pets/new

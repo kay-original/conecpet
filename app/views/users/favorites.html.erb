@@ -1,0 +1,28 @@
+<div class="container">
+<% if @user.id == current_user.id %>
+  <h2 class="favo-title">お気に入りリスト</h2>
+<% else %>
+  <h2><% @user.name %>さんのお気に入りリスト</h2>
+<% end %>
+  <% @favorites.each do |favo| %>
+    <div class="fovo-container">
+      <div class="favo-image">
+        <% if favo.pet.pet_image.attached? %>
+          <%= image_tag favo.pet.pet_image %>
+        <% else %>
+          <%= image_tag "20200501_noimage.jpg" %>
+        <% end %>
+        <ul class="favo-list">
+          <li class="favo-pet-name"><%= favo.pet.name %></li>
+          <li class="favo-pet-owner">
+            飼い主：
+            <%= link_to user_path(favo.user.id) do %>
+              <%= favo.user.name %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <%= link_to "詳細", pet_path(favo.pet.id), class: "detail-btn" %>
+    </div>
+  <% end %>
+</div>

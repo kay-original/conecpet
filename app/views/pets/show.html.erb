@@ -7,6 +7,18 @@
       <%= image_tag "20200501_noimage.jpg" %>
     <% end %>
   </div>
+  <div class="fav">
+    <% if @pet.favorited_by?(current_user) %> 
+      <%=link_to pet_favorites_path(@pet.id), method: :delete do %>
+        <div class="fav-regi"><i class="fas fa-star star fa-2x"></i><br>解除</div>
+      <% end %>
+    <% else %>
+      <%= link_to pet_favorites_path(@pet.id), method: :post do %>
+        <div class="fav-regi"><i class="far fa-star star fa-2x"></i><br>登録</div>
+      <% end %>
+    <% end %>
+    <p class="fav_count">お気に入り数：<%= @pet.favorites.count %></p>
+  </div>
   <div class="card__textbox">
     <div class="card__titletext">
       <p><%= @pet.name %></p>
@@ -90,4 +102,20 @@
       <%= link_to "マイペットを削除", pet_path(@pet.id), method: :delete, data: { confirm: '本当に良いですか？' }, class: "delete-btn" %>
     </div>
   <% end %>
+  <div class="comments">
+    <h1>コメント欄</h1>
+    <% @comments.includes([:user]).each do |comment| %>
+      <div class="comments_index">
+        <%= link_to user_path(comment.user.id) do %>
+          <p class="comment_user">投稿者：<span><%= comment.user.name %></span></p>
+        <% end %>
+          <p><%= comment.comment_text %></p>
+      </div>
+    <% end %>
+    <%= form_with(model:[@pet, @comment], method: :post) do |f| %>
+      <%= f.text_area :comment_text, class: "comment_form", placeholder: "コメントを記入" %>
+      <%= f.hidden_field :pet_id, value: @pet.id %>
+      <%= f.submit 'コメントする', class: "comment_btn" %>
+    <% end %>
+  </div>
 </div>

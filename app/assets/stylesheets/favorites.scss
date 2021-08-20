@@ -1,0 +1,43 @@
+// Place all the styles related to the favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.fovo-container{
+  display: flex;
+  margin-top: 16px;
+}
+.favo-title{
+  padding-left: 30px;
+  border-top: groove 5px #a6ff00;
+  border-bottom: groove 5px #a6ff00;
+}
+.favo-image{
+  display: flex;
+  vertical-align: bottom;
+  img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+}
+.favo-list{
+  display: flex;
+  li{
+    line-height: 60px;
+  }
+  .favo-pet-name{
+    margin-left: 10px;
+  }
+  .favo-pet-owner{
+    margin-left: 40px;
+  }
+}
+.detail-btn{
+  font-size: 16px;
+  padding: 8px 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 100px;
+  background-color: darkgreen;
+  border-radius: 3px;
+  color: white;
+}

@@ -11,11 +11,15 @@ Rails.application.routes.draw do
     get '/user/sign_in' => 'users/sessions#new'
     get '/users/sign_out' => 'users/sessions#destroy'
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    get 'favorites'
+  end
   resources :pets do
     collection do
       get 'search'
     end
+    resource :comments, only: [:create]
+    resource :favorites, only: [:create, :destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
