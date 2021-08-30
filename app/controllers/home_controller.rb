@@ -6,6 +6,6 @@ class HomeController < ApplicationController
       user.password = SecureRandom.urlsafe_base64
     end
     sign_in user
-    redirect_to user_path(current_user), notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to search_pets_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 end

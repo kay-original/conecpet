@@ -189,8 +189,6 @@
 .profile-right{
   box-sizing: border-box;
   .count{
-    display: flex;
-    justify-content: center;
     margin-top: 30px;
     ul{
       display: flex;
@@ -211,13 +209,29 @@
   border: solid 3px rgb(53, 133, 53);
   border-radius: 50%;
   overflow: hidden;
-  margin-top: 30px;
+  margin: 0 auto;
   img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     vertical-align: top;
   }
+}
+.follow-content{
+  margin-top: 30px;
+  text-align: center;
+}
+.follow-btn{
+  color: white;
+  background-color: rgb(50, 180, 230);
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+.unfollow-btn{
+  color: white;
+  background-color: rgb(63, 64, 65);
+  padding: 10px 12px;
+  border-radius: 3px;
 }
 
 .profile-content{
@@ -242,7 +256,7 @@
   }
 }
 .intro-column{
-  height: 180px;
+  height: 200px;
 }
 
 .link-column{
@@ -274,10 +288,16 @@
   .profile-content{
     width: 70%;
     margin: 0 auto;
+    margin-top: 30px;
   }
   .link-column{
     text-align: center;
     margin-top: 30px;
+  }
+  .count{
+    ul{
+      justify-content: center;
+    }
   }
 }
 /*マイペット一覧*/

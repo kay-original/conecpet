@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update] do
     get 'favorites'
+    resource :relationships, only:[:create, :destroy]
+    get 'follows' => 'relationships#followed'
+    get 'followers' => 'relationships#follower'
   end
   resources :pets do
     collection do

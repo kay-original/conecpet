@@ -2,7 +2,7 @@
 <% if @user.id == current_user.id %>
   <h2 class="favo-title">お気に入りリスト</h2>
 <% else %>
-  <h2><% @user.name %>さんのお気に入りリスト</h2>
+  <h2><%= @user.name %>さんのお気に入りリスト</h2>
 <% end %>
   <% @favorites.each do |favo| %>
     <div class="fovo-container">

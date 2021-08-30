@@ -1,0 +1,35 @@
+<div class="container">
+  <% if @user.id == current_user.id %>
+    <h2 class="favo-title">フォロワーリスト</h2>
+  <% else %>
+    <h2><%= @user.name %>さんのフォロワーリスト</h2>
+  <% end %>
+  <% @users.each do |followed| %>
+    <div class="fovo-container">
+      <div class="favo-image">
+        <% if followed.image.attached? %>
+          <%= image_tag followed.image %>
+        <% else %>
+          <%= image_tag "20200501_noimage.jpg" %>
+        <% end %>
+        <ul class="favo-list">
+          <li class="favo-pet-name"><%= followed.name %></li>
+        </ul>
+      </div>
+      <%= link_to "詳細", user_path(followed.id), class: "detail-btn" %>
+      <% if current_user.id != @user.id %>
+        <% if current_user.following?(@user) %>
+          <span class="followed">フォロー済み</span>
+        <% else %>
+          <%= link_to 'フォローする', user_relationships_path(@user.id), method: :POST, class: "list-follow-btn" %>
+        <% end %>
+      <% end %>
+      <% if current_user.id == @user.id %>
+        <% if current_user.following?(@user) %>
+        <% else %>
+          <%= link_to 'フォローを外す', user_relationships_path(@user.id), method: :delete, class: "list-unfollow-btn" %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

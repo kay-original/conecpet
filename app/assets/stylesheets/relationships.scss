@@ -1,0 +1,31 @@
+// Place all the styles related to the relationships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.list-follow-btn{
+  font-size: 16px;
+  padding: 8px 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  background-color: rgb(50, 180, 230);
+  border-radius: 3px;
+  color: white;
+}
+.list-unfollow-btn{
+  font-size: 16px;
+  padding: 8px 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  background-color: rgb(63, 64, 65);
+  border-radius: 3px;
+  color: white;
+}
+.followed{
+  font-size: 16px;
+  padding: 8px 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  color: white;
+}
