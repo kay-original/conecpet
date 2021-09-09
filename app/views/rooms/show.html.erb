@@ -1,0 +1,74 @@
+<header class="sub-header">
+  <h2>チャットルーム</h2>
+</header>
+<div class="container">
+  <ul class="room-user">
+    <h4>参加者</h4>
+    <% @entries.each do |e| %>
+      <li>
+        <%= link_to user_path(e.user.id) do %>
+          <% if e.user.image.attached? %>
+            <%= image_tag e.user.image, class:"user-image" %>
+          <% else %>
+            <%= image_tag "20200501_noimage.jpg", class:"user-image" %>
+          <% end %>
+          <p class="user-name"><%= e.user.name %></p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="chats">
+    <div class="chat">
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <% unless m.user.id == current_user.id %>
+            <div class="chat-box">
+              <div class="chat-face">
+                <%= link_to user_path(m.user.id) do %>
+                  <% if m.user.image.attached? %>
+                    <%= image_tag m.user.image, class:"icon-image" %>
+                  <% else %>
+                    <%= image_tag "20200501_noimage.jpg", class:"icon-image" %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="chat-hukidashi">
+                <div class="message">
+                  <p><%= m.message %></p>
+                </div>
+                <p class="time"><%= m.created_at.strftime("%Y-%m-%d %H:%M")%></p>
+              </div>
+            </div>
+          <% else %>
+            <div class="my-chat-box">
+              <div class="chat-hukidashi">
+                <div class="message">
+                  <p><%= m.message %></p>
+                </div>
+                <p class="time"><%= m.created_at.strftime("%Y-%m-%d %H:%M")%></p>
+              </div>
+              <div class="chat-face">
+                <%= link_to user_path(m.user.id) do %>
+                  <% if m.user.image.attached? %>
+                    <%= image_tag m.user.image, class:"icon-image" %>
+                  <% else %>
+                    <%= image_tag "20200501_noimage.jpg", class:"icon-image" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h3>メッセージはありません</h3>
+      <% end %>
+    </div>
+    <div class="posts">
+      <%= form_for @message do |f| %>
+        <%= f.text_area :message, placeholder: "メッセージを入力して下さい", class:"form-text-field" %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <%= f.submit "送信",class: 'form-submit'%>
+      <% end %>
+    </div>
+  </div>
+</div>

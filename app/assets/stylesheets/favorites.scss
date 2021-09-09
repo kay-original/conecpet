@@ -4,6 +4,7 @@
 .fovo-container{
   display: flex;
   margin-top: 16px;
+  justify-content: space-between;
 }
 .favo-title{
   padding-left: 30px;
@@ -32,12 +33,11 @@
   }
 }
 .detail-btn{
-  font-size: 16px;
-  padding: 8px 14px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-left: 100px;
-  background-color: #34971b;
-  border-radius: 3px;
   color: white;
+  background-color: #34971b;
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+.list-btns{
+  line-height: 60px;
 }

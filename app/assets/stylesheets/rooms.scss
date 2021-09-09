@@ -1,0 +1,150 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.room-user{
+  display: flex;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  align-items: center;
+  h4{
+    margin-right: 30px;
+    margin-left: 10px;
+  }
+  li{
+    padding: 10px;
+  }
+  .user-image{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    vertical-align: bottom;
+    border: 1px solid lightgrey;
+  }
+  .user-name{
+    text-align: center;
+    font-size: 12px;
+  }
+}
+.chats{
+  margin-top: 40px;
+}
+.chat-box{
+  display: flex;
+  position: relative;
+  margin: 15px 0;
+  .chat-face{
+    position: absolute;
+    bottom: 5px;
+    height: 50px;
+    width: 50px;
+    .icon-image{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: 1px solid lightgrey;
+    }
+  }
+  .message{
+    position: relative;
+    margin-left: 95px;
+    padding: 8px 16px;
+    background-color: rgb(195, 255, 195);
+    border-radius: 30px;
+    p{
+      white-space: pre-wrap;
+    }
+  }
+  .message::before{
+    content: "";
+    position: absolute;
+    left: -38px;
+    width: 13px;
+    height: 12px;
+    bottom: 0;
+    background-color: rgb(195, 255, 195);
+    border-radius: 50%;
+  }
+  .message::after{
+    content: "";
+    position: absolute;
+    left: -24px;
+    width: 20px;
+    height: 18px;
+    bottom: 3px;
+    background-color: rgb(195, 255, 195);
+    border-radius: 50%;
+  }
+  .time{
+    font-size: 10px;
+    text-align: right;
+  }
+}
+.posts{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+  .form-text-field{
+    width: 90%;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .form-submit{
+    color: white;
+    background: #34971b;
+    border: solid 1px #148d09;
+    border-radius: 4px;
+    padding: 0.25em 0.5em;
+  }
+}
+.my-chat-box{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin: 15px 0;
+  .chat-face{
+    position: absolute;
+    bottom: 12px;
+    height: 50px;
+    width: 50px;
+    .icon-image{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: 1px solid lightgrey;
+    }
+  }
+  .message{
+    position: relative;
+    margin-right: 95px;
+    padding: 8px 16px;
+    background: #fff0c6;
+    border-radius: 30px;
+    p{
+      white-space: pre-wrap;
+    }
+  }
+  .message::before{
+    content: "";
+    position: absolute;
+    right: -38px;
+    width: 13px;
+    height: 12px;
+    bottom: 0;
+    background: #fff0c6;
+    border-radius: 50%;
+  }
+  .message::after{
+    content: "";
+    position: absolute;
+    right: -24px;
+    width: 20px;
+    height: 18px;
+    bottom: 3px;
+    background: #fff0c6;
+    border-radius: 50%;
+  }
+  .time{
+    font-size: 10px;
+  }
+}

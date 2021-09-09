@@ -22,7 +22,9 @@
           </li>
         </ul>
       </div>
-      <%= link_to "詳細", pet_path(favo.pet.id), class: "detail-btn" %>
+      <div class="list-btns">
+        <%= link_to "詳細", pet_path(favo.pet.id), class: "detail-btn" %>
+      </div>
     </div>
   <% end %>
 </div>
