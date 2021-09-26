@@ -368,7 +368,10 @@
 
 .pet_text{
   padding: 16px 10px ;
-  border-bottom: rgb(216, 216, 216) 1px ridge;
+  border-bottom: rgb(216, 216, 216) 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   span{
     color: rgb(120, 120, 120);
   }

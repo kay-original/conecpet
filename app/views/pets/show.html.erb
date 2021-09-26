@@ -24,11 +24,12 @@
       <p><%= @pet.name %></p>
     </div>
     <div class="card__overviewtext">
-      <%= link_to user_path(@pet.user.id) do %>
-        <li class="pet_text">
-          飼い主：<%= @pet.user.name %>
-        </li>
-      <% end %>
+      <li class="pet_text">
+        飼い主：<%= @pet.user.name %>
+        <% unless @pet.user.id == current_user.id %>
+          <%= link_to "詳細", user_path(@pet.user.id), class:"detail-btn" %>
+        <% end %>
+      </li>
       <li class="pet_text">
         種類：<%= @pet.breed %>
       </li>
