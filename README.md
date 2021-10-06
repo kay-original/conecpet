@@ -1,7 +1,7 @@
 # README
 
 ## アプリケーション名
-『CONECPETS』
+『CONNECPETS』
 
 ## URL
 https://conecpet.herokuapp.com/
