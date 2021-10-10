@@ -4,7 +4,7 @@
 『CONNECPETS』
 
 ## URL
-https://connecpet2.herokuapp.com/
+https://connecpet2.herokuapp.com/<br>
 ＊お試しの方はゲストログインをご利用ください。
 
 ## アプリケーション概要
