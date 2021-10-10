@@ -72,7 +72,7 @@ class PetsController < ApplicationController
   private
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:user_id, :name, :dog_or_cat, :breed, :mother_breed, :father_breed, :birthplace, :birthday, :breeder_name, :mother_name, :father_name, :pet_image)
+      params.require(:pet).permit(:user_id, :name, :dog_or_cat, :breed, :mother_breed, :father_breed, :birthplace, :birthday, :breeder_name, :mother_name, :father_name, :pet_image, :other_info)
     end
     def set_q
       @q = Pet.ransack(params[:q])
