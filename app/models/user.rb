@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
+  validates :name, presence: true
+
   # 1. followメソッド　＝　フォローする
   def follow(user_id)
     follower.create(followed_id: user_id)
