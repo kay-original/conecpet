@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
     redirect_to request.referer #遷移前のURLを取得してリダイレクト
   end
 
-  def destroy #フォローを外す　Userモデルで定義したunfollowメソッド
+  def destroy #フォローを外す Userモデルで定義したunfollowメソッド
     current_user.unfollow(params[:user_id])
     redirect_back(fallback_location: root_path)
   end
